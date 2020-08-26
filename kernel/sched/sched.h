@@ -1076,6 +1076,9 @@ struct rq {
 	/* Must be inspected within a rcu lock section */
 	struct cpuidle_state	*idle_state;
 #endif
+#if defined(CONFIG_PREEMPT_RT) && defined(CONFIG_SMP)
+	unsigned int		nr_pinned;
+#endif
 
 	ANDROID_VENDOR_DATA_ARRAY(1, 96);
 	ANDROID_OEM_DATA_ARRAY(1, 16);
