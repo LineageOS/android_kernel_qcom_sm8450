@@ -75,8 +75,23 @@ cmd_ld_ko_o += ;							\
 	fi
 endif
 
-$(modules): %.ko: %$(prelink-ext).o %.mod.o scripts/module.lds FORCE
-	+$(call if_changed,ld_ko_o)
+quiet_cmd_btf_ko = BTF [M] $@
+      cmd_btf_ko = LLVM_OBJCOPY=$(OBJCOPY) $(PAHOLE) -J --btf_base vmlinux $@
+
+# Same as newer-prereqs, but allows to exclude specified extra dependencies
+newer_prereqs_except = $(filter-out $(PHONY) $(1),$?)
+
+# Same as if_changed, but allows to exclude specified extra dependencies
+if_changed_except = $(if $(call newer_prereqs_except,$(2))$(cmd-check),      \
+	$(cmd);                                                              \
+	printf '%s\n' 'cmd_$@ := $(make-cmd)' > $(dot-target).cmd, @:)
+
+# Re-generate module BTFs if either module's .ko or vmlinux changed
+$(modules): %.ko: %$(prelink-ext).o %.mod.o scripts/module.lds vmlinux FORCE
+	+$(call if_changed_except,ld_ko_o,vmlinux)
+ifdef CONFIG_DEBUG_INFO_BTF_MODULES
+	+$(if $(newer-prereqs),$(call cmd,btf_ko))
+endif
 
 targets += $(modules) $(modules:.ko=.mod.o)
 
