@@ -567,7 +567,7 @@ static struct xsk_map *xsk_get_map_list_entry(struct xdp_sock *xs,
 	node = list_first_entry_or_null(&xs->map_list, struct xsk_map_node,
 					node);
 	if (node) {
-		WARN_ON(xsk_map_inc(node->map));
+		bpf_map_inc(&node->map->map);
 		map = node->map;
 		*map_entry = node->map_entry;
 	}
@@ -597,7 +597,7 @@ static void xsk_delete_from_maps(struct xdp_sock *xs)
 
 	while ((map = xsk_get_map_list_entry(xs, &map_entry))) {
 		xsk_map_try_sock_delete(map, xs, map_entry);
-		xsk_map_put(map);
+		bpf_map_put(&map->map);
 	}
 }
 
