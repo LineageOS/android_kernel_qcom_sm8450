@@ -581,13 +581,15 @@ err_fib6_rt_nh_del:
 	return err;
 }
 
-static void nsim_fib6_rt_hw_flags_set(const struct nsim_fib6_rt *fib6_rt,
+static void nsim_fib6_rt_hw_flags_set(struct nsim_fib_data *data,
+				      const struct nsim_fib6_rt *fib6_rt,
 				      bool trap)
 {
+	struct net *net = devlink_net(data->devlink);
 	struct nsim_fib6_rt_nh *fib6_rt_nh;
 
 	list_for_each_entry(fib6_rt_nh, &fib6_rt->nh_list, list)
-		fib6_info_hw_flags_set(fib6_rt_nh->rt, false, trap);
+		fib6_info_hw_flags_set(net, fib6_rt_nh->rt, false, trap);
 }
 
 static int nsim_fib6_rt_add(struct nsim_fib_data *data,
@@ -608,7 +610,7 @@ static int nsim_fib6_rt_add(struct nsim_fib_data *data,
 		goto err_fib_dismiss;
 	}
 
-	nsim_fib6_rt_hw_flags_set(fib6_rt, true);
+	nsim_fib6_rt_hw_flags_set(data, fib6_rt, true);
 
 	return 0;
 
@@ -634,9 +636,9 @@ static int nsim_fib6_rt_replace(struct nsim_fib_data *data,
 		return err;
 	}
 
-	nsim_fib6_rt_hw_flags_set(fib6_rt, true);
+	nsim_fib6_rt_hw_flags_set(data, fib6_rt, true);
 
-	nsim_fib6_rt_hw_flags_set(fib6_rt_old, false);
+	nsim_fib6_rt_hw_flags_set(data, fib6_rt_old, false);
 	nsim_fib6_rt_destroy(fib6_rt_old);
 
 	return 0;
@@ -796,7 +798,7 @@ static void nsim_fib6_rt_free(struct nsim_fib_rt *fib_rt,
 	struct nsim_fib6_rt *fib6_rt;
 
 	fib6_rt = container_of(fib_rt, struct nsim_fib6_rt, common);
-	nsim_fib6_rt_hw_flags_set(fib6_rt, false);
+	nsim_fib6_rt_hw_flags_set(data, fib6_rt, false);
 	nsim_fib_account(&data->ipv6.fib, false, NULL);
 	nsim_fib6_rt_destroy(fib6_rt);
 }
