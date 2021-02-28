@@ -44,7 +44,7 @@ include include/config/auto.conf
 include $(srctree)/scripts/Kbuild.include
 
 # for ld_flags
-include scripts/Makefile.lib
+include $(srctree)/scripts/Makefile.lib
 
 mixed-build-prefix = $(if $(KBUILD_MIXED_TREE),$(KBUILD_MIXED_TREE)/)
 
