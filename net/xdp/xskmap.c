@@ -141,6 +141,16 @@ static int xsk_map_gen_lookup(struct bpf_map *map, struct bpf_insn *insn_buf)
 	return insn - insn_buf;
 }
 
+static void *__xsk_map_lookup_elem(struct bpf_map *map, u32 key)
+{
+	struct xsk_map *m = container_of(map, struct xsk_map, map);
+
+	if (key >= map->max_entries)
+		return NULL;
+
+	return READ_ONCE(m->xsk_map[key]);
+}
+
 static void *xsk_map_lookup_elem(struct bpf_map *map, void *key)
 {
 	WARN_ON_ONCE(!rcu_read_lock_held());
@@ -231,6 +241,11 @@ static int xsk_map_delete_elem(struct bpf_map *map, void *key)
 	return 0;
 }
 
+static int xsk_map_redirect(struct bpf_map *map, u32 ifindex, u64 flags)
+{
+	return __bpf_xdp_redirect_map(map, ifindex, flags, __xsk_map_lookup_elem);
+}
+
 void xsk_map_try_sock_delete(struct xsk_map *map, struct xdp_sock *xs,
 			     struct xdp_sock **map_entry)
 {
@@ -263,4 +278,5 @@ const struct bpf_map_ops xsk_map_ops = {
 	.map_check_btf = map_check_no_btf,
 	.map_btf_name = "xsk_map",
 	.map_btf_id = &xsk_map_btf_id,
+	.map_redirect = xsk_map_redirect,
 };
