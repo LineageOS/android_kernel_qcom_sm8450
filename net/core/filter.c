@@ -4835,6 +4835,9 @@ static int _bpf_setsockopt(struct sock *sk, int level, int optname,
 				sk->sk_prot->keepalive(sk, valbool);
 			sock_valbool_flag(sk, SOCK_KEEPOPEN, valbool);
 			break;
+		case SO_REUSEPORT:
+			sk->sk_reuseport = valbool;
+			break;
 		default:
 			ret = -EINVAL;
 		}
@@ -5003,6 +5006,9 @@ static int _bpf_getsockopt(struct sock *sk, int level, int optname,
 			break;
 		case SO_BINDTOIFINDEX:
 			*((int *)optval) = sk->sk_bound_dev_if;
+			break;
+		case SO_REUSEPORT:
+			*((int *)optval) = sk->sk_reuseport;
 			break;
 		default:
 			goto err_clear;
