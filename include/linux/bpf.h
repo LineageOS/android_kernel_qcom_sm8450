@@ -41,6 +41,7 @@ struct bpf_local_storage;
 struct bpf_local_storage_map;
 struct kobject;
 struct mem_cgroup;
+struct module;
 struct bpf_func_state;
 
 extern struct idr btf_idr;
@@ -660,6 +661,7 @@ struct bpf_trampoline {
 	/* Executable image of trampoline */
 	struct bpf_tramp_image *cur_image;
 	u64 selector;
+	struct module *mod;
 };
 
 struct bpf_attach_target_info {
@@ -1757,17 +1759,15 @@ bpf_base_func_proto(enum bpf_func_id func_id)
 	return NULL;
 }
 
-<<<<<<< HEAD
+static inline void bpf_task_storage_free(struct task_struct *task)
+{
+}
+
 static inline bool unprivileged_ebpf_enabled(void)
 {
 	return false;
 }
 
-=======
-static inline void bpf_task_storage_free(struct task_struct *task)
-{
-}
->>>>>>> a10787e6d58c (bpf: Enable task local storage for tracing programs)
 #endif /* CONFIG_BPF_SYSCALL */
 
 void __bpf_free_used_btfs(struct bpf_prog_aux *aux,
