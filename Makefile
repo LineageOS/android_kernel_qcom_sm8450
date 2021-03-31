@@ -1200,8 +1200,9 @@ endif # CONFIG_BPF
 
 PHONY += prepare0
 
-export MODORDER := $(extmod-prefix)modules.order
-export MODULES_NSDEPS := $(extmod-prefix)modules.nsdeps
+export extmod_prefix = $(if $(KBUILD_EXTMOD),$(KBUILD_EXTMOD)/)
+export MODORDER := $(extmod_prefix)modules.order
+export MODULES_NSDEPS := $(extmod_prefix)modules.nsdeps
 
 # ---------------------------------------------------------------------------
 # Kernel headers
