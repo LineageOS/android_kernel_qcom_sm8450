@@ -1064,8 +1064,8 @@ int __cgroup_bpf_run_filter_skb(struct sock *sk,
 		ret = BPF_PROG_CGROUP_INET_EGRESS_RUN_ARRAY(
 			cgrp->bpf.effective[type], skb, __bpf_prog_run_save_cb);
 	} else {
-		ret = BPF_PROG_RUN_ARRAY(cgrp->bpf.effective[type], skb,
-					  __bpf_prog_run_save_cb);
+		ret = BPF_PROG_RUN_ARRAY_CG(cgrp->bpf.effective[type], skb,
+					    __bpf_prog_run_save_cb);
 		ret = (ret == 1 ? 0 : -EPERM);
 	}
 	bpf_restore_data_end(skb, saved_data_end);
@@ -1095,7 +1095,7 @@ int __cgroup_bpf_run_filter_sk(struct sock *sk,
 	struct cgroup *cgrp = sock_cgroup_ptr(&sk->sk_cgrp_data);
 	int ret;
 
-	ret = BPF_PROG_RUN_ARRAY(cgrp->bpf.effective[type], sk, bpf_prog_run);
+	ret = BPF_PROG_RUN_ARRAY_CG(cgrp->bpf.effective[type], sk, bpf_prog_run);
 	return ret == 1 ? 0 : -EPERM;
 }
 EXPORT_SYMBOL(__cgroup_bpf_run_filter_sk);
@@ -1142,8 +1142,8 @@ int __cgroup_bpf_run_filter_sock_addr(struct sock *sk,
 	}
 
 	cgrp = sock_cgroup_ptr(&sk->sk_cgrp_data);
-	ret = BPF_PROG_RUN_ARRAY_FLAGS(cgrp->bpf.effective[type], &ctx,
-				       bpf_prog_run, flags);
+	ret = BPF_PROG_RUN_ARRAY_CG_FLAGS(cgrp->bpf.effective[type], &ctx,
+				          bpf_prog_run, flags);
 
 	return ret == 1 ? 0 : -EPERM;
 }
@@ -1172,8 +1172,8 @@ int __cgroup_bpf_run_filter_sock_ops(struct sock *sk,
 	struct cgroup *cgrp = sock_cgroup_ptr(&sk->sk_cgrp_data);
 	int ret;
 
-	ret = BPF_PROG_RUN_ARRAY(cgrp->bpf.effective[type], sock_ops,
-				 bpf_prog_run);
+	ret = BPF_PROG_RUN_ARRAY_CG(cgrp->bpf.effective[type], sock_ops,
+				    bpf_prog_run);
 	return ret == 1 ? 0 : -EPERM;
 }
 EXPORT_SYMBOL(__cgroup_bpf_run_filter_sock_ops);
@@ -1191,8 +1191,8 @@ int __cgroup_bpf_check_dev_permission(short dev_type, u32 major, u32 minor,
 
 	rcu_read_lock();
 	cgrp = task_dfl_cgroup(current);
-	allow = BPF_PROG_RUN_ARRAY(cgrp->bpf.effective[type], &ctx,
-				   bpf_prog_run);
+	allow = BPF_PROG_RUN_ARRAY_CG(cgrp->bpf.effective[type], &ctx,
+				      bpf_prog_run);
 	rcu_read_unlock();
 
 	return !allow;
@@ -1323,7 +1323,7 @@ int __cgroup_bpf_run_filter_sysctl(struct ctl_table_header *head,
 
 	rcu_read_lock();
 	cgrp = task_dfl_cgroup(current);
-	ret = BPF_PROG_RUN_ARRAY(cgrp->bpf.effective[type], &ctx, bpf_prog_run);
+	ret = BPF_PROG_RUN_ARRAY_CG(cgrp->bpf.effective[type], &ctx, bpf_prog_run);
 	rcu_read_unlock();
 
 	kfree(ctx.cur_val);
@@ -1437,8 +1437,8 @@ int __cgroup_bpf_run_filter_setsockopt(struct sock *sk, int *level,
 	}
 
 	lock_sock(sk);
-	ret = BPF_PROG_RUN_ARRAY(cgrp->bpf.effective[BPF_CGROUP_SETSOCKOPT],
-				 &ctx, bpf_prog_run);
+	ret = BPF_PROG_RUN_ARRAY_CG(cgrp->bpf.effective[BPF_CGROUP_SETSOCKOPT],
+				    &ctx, bpf_prog_run);
 	release_sock(sk);
 
 	if (!ret) {
@@ -1547,8 +1547,8 @@ int __cgroup_bpf_run_filter_getsockopt(struct sock *sk, int level,
 	}
 
 	lock_sock(sk);
-	ret = BPF_PROG_RUN_ARRAY(cgrp->bpf.effective[BPF_CGROUP_GETSOCKOPT],
-				 &ctx, bpf_prog_run);
+	ret = BPF_PROG_RUN_ARRAY_CG(cgrp->bpf.effective[BPF_CGROUP_GETSOCKOPT],
+				    &ctx, bpf_prog_run);
 	release_sock(sk);
 
 	if (!ret) {
@@ -1611,8 +1611,8 @@ int __cgroup_bpf_run_filter_getsockopt_kern(struct sock *sk, int level,
 	 * be called if that data shouldn't be "exported".
 	 */
 
-	ret = BPF_PROG_RUN_ARRAY(cgrp->bpf.effective[BPF_CGROUP_GETSOCKOPT],
-				 &ctx, bpf_prog_run);
+	ret = BPF_PROG_RUN_ARRAY_CG(cgrp->bpf.effective[BPF_CGROUP_GETSOCKOPT],
+				    &ctx, bpf_prog_run);
 	if (!ret)
 		return -EPERM;
 
