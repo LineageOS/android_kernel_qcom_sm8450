@@ -192,13 +192,8 @@ struct bpf_map {
 	 */
 	atomic64_t refcnt ____cacheline_aligned;
 	atomic64_t usercnt;
-	/* rcu is used before freeing and work is only used during freeing */
-	union {
-		struct work_struct work;
-		struct rcu_head rcu;
-	};
+	struct work_struct work;
 	struct mutex freeze_mutex;
-	bool free_after_mult_rcu_gp;
 #ifdef __GENKSYMS__
 	/* Preserve the CRC change that commit 33fe044f6a9e ("bpf: Fix toctou on
 	 * read-only map's constant scalar tracking") caused.
