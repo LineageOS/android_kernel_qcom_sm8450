@@ -34,6 +34,24 @@
       "parentUuid": "fccf89f6_70392f27",
       "revId": "529ffa567290ffe1b190cdf1c39faa05e1e36aad",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "308de040_165efa11",
+        "filename": "drivers/soc/qcom/rpmh-rsc.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 677,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2024-11-07T17:38:50Z",
+      "side": 1,
+      "message": "Try https://review.lineageos.org/c/LineageOS/android_kernel_qcom_sm8450/+/408084",
+      "parentUuid": "c8e5f169_076bbe60",
+      "revId": "529ffa567290ffe1b190cdf1c39faa05e1e36aad",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
