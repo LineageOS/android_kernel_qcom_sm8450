@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fccf89f6_70392f27",
+        "filename": "drivers/soc/qcom/rpmh-rsc.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 677,
+      "author": {
+        "id": 21290
+      },
+      "writtenOn": "2024-11-07T17:29:54Z",
+      "side": 1,
+      "message": "../../../../../../kernel/xiaomi/sm8450/drivers/soc/qcom/rpmh-rsc.c:677:38: error: use of undeclared identifier \u0027flags\u0027\n  677 |                 spin_unlock_irqrestore(\u0026drv-\u003elock, flags);",
+      "revId": "529ffa567290ffe1b190cdf1c39faa05e1e36aad",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
