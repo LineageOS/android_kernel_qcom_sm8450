@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "62f5f982_f5b125e6",
+        "filename": "drivers/power/supply/qti_battery_charger.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 2084,
+      "author": {
+        "id": 14010
+      },
+      "writtenOn": "2025-01-10T12:45:10Z",
+      "side": 1,
+      "message": "This is needed to have the sysfs node reflect the value applied by __battery_psy_set_charge_current(). The same holds for line 2074.",
+      "range": {
+        "startLine": 2084,
+        "startChar": 9,
+        "endLine": 2084,
+        "endChar": 24
+      },
+      "revId": "18ab2fb3a4972b0bfb26de474dce4202a7515244",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
