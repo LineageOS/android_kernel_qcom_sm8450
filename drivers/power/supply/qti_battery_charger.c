@@ -2069,12 +2069,22 @@ static ssize_t charging_enabled_store(struct class *c,
 		 * Enable charging, i.e. set the restricted current back to
 		 * the thermal limit and unset the restriction boolean flag.
 		 */
-		rc = __battery_psy_set_charge_current(bcdev,
-				bcdev->thermal_fcc_ua);
-		if (rc < 0)
-			return rc;
+		u32 fcc_ua = bcdev->restrict_fcc_ua;
+		bool chg_en = bcdev->restrict_chg_en;
+
+		/* Has to be set before calling __battery_psy_set_charge_current */
 		bcdev->restrict_fcc_ua = bcdev->thermal_fcc_ua;
 		bcdev->restrict_chg_en = 0;
+
+		rc = __battery_psy_set_charge_current(bcdev,
+				bcdev->thermal_fcc_ua);
+
+		if (rc < 0) {
+			/* Restore if failed */
+			bcdev->restrict_fcc_ua = fcc_ua;
+			bcdev->restrict_chg_en = chg_en;
+			return rc;
+		}
 	} else {
 		/*
 		 * Disable charging, i.e. set the restricted current to zero
