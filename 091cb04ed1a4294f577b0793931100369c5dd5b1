@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "951ec583_c6521da2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2025-12-21T13:39:33Z",
+      "side": 1,
+      "message": "This needs to be expanded to make default defconfigs build at least, eg. drivers/input/touchscreen/goodix_berlin_driver/goodix_ts_inspect.c is also affected",
+      "revId": "091cb04ed1a4294f577b0793931100369c5dd5b1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
