@@ -16,6 +16,23 @@
       "message": "Tests have been built locally.",
       "revId": "6ed01f1e0a14f5b42695408d1e1f1c09fb20d288",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8640a1d1_02bca98d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2026-01-07T12:55:34Z",
+      "side": 1,
+      "message": "Have you tried sending this upstream? 5.10 is still supported",
+      "revId": "6ed01f1e0a14f5b42695408d1e1f1c09fb20d288",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
