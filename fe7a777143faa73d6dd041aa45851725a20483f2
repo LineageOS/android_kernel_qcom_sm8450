@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8c788ac3_21edd5c8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 32683
+      },
+      "writtenOn": "2026-01-18T03:39:18Z",
+      "side": 1,
+      "message": "See https://review.lineageos.org/c/LineageOS/android_kernel_qcom_sdm660/+/467656/comments/06ce07db_de4dd4ad for more details. Thanks!",
+      "revId": "fe7a777143faa73d6dd041aa45851725a20483f2",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
