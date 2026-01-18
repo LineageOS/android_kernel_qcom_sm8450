@@ -16,6 +16,24 @@
       "message": "Well, it\u0027s actually an ACK bug. I opened https://android-review.googlesource.com/c/kernel/common/+/3919385",
       "revId": "72c11f7d654040f7b80c587096ef8613587cd513",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3984e7a5_1ea929cd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 32837
+      },
+      "writtenOn": "2026-01-18T22:16:27Z",
+      "side": 1,
+      "message": "works (patchset3) xiaomi_sm8450",
+      "parentUuid": "bca897ae_23993d3e",
+      "revId": "72c11f7d654040f7b80c587096ef8613587cd513",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
