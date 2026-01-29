@@ -786,10 +786,6 @@ static __always_inline u32 bpf_prog_run_xdp(const struct bpf_prog *prog,
 	 * under local_bh_disable(), which provides the needed RCU protection
 	 * for accessing map entries.
 	 */
-	struct bpf_redirect_info *ri = this_cpu_ptr(&bpf_redirect_info);
-
-	if (ri->map)
-		ri->map = NULL;
 	return __BPF_PROG_RUN(prog, xdp, BPF_DISPATCHER_FUNC(xdp));
 }
 
