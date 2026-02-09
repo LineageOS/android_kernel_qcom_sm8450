@@ -73,13 +73,13 @@ static void tzobject_delete(struct kref *refs)
 	pr_info("%s: me->fd = %d, me->refs = %d, files = %p\n",
 		__func__, me->fd, kref_read(&me->refs), current->files);
 	/*
-	 * after _close_fd(), ref_cnt will be 0,
+	 * after close_fd(), ref_cnt will be 0,
 	 * but smcinvoke_release() was still not called,
 	 * so we first call smcinvoke_release_from_kernel_client() to
-	 * free filp and ask TZ to release object, then call _close_fd()
+	 * free filp and ask TZ to release object, then call close_fd()
 	 */
 	smcinvoke_release_from_kernel_client(me->fd);
-	__close_fd(current->files, me->fd);
+	close_fd(me->fd);
 	kfree(me);
 }
 
@@ -252,7 +252,7 @@ static int invoke_over_smcinvoke(void *cxt,
 
 			if (obj.fd >= 0) {
 				pr_err("Close OO[%zu].fd = %d\n", i, obj.fd);
-				__close_fd(current->files, obj.fd);
+				close_fd(obj.fd);
 			}
 		}
 		ret = SMCI_OBJECT_ERROR_KMEM;
@@ -278,7 +278,7 @@ static int get_root_obj(struct smci_object *rootObj)
 	}
 	*rootObj = tzobject_new(root_fd);
 	if (SMCI_OBJECT_IS_NULL(*rootObj)) {
-		__close_fd(current->files, root_fd);
+		close_fd(root_fd);
 		ret = -ENOMEM;
 	}
 	return ret;
