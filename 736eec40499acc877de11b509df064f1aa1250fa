@@ -16,6 +16,23 @@
       "message": "can you explain this one?\n\nNo context whatsoever",
       "revId": "736eec40499acc877de11b509df064f1aa1250fa",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7088950d_2dd374d4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2026-03-20T19:45:04Z",
+      "side": 1,
+      "message": "I\u0027m told this was fixed with an upstream commit elsewhere",
+      "revId": "736eec40499acc877de11b509df064f1aa1250fa",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
