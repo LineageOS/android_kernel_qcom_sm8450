@@ -16,6 +16,23 @@
       "message": "unsure about the ABI conflict resolution",
       "revId": "475066cfcc4833b8e37a20260ac941bac79fc379",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7133a893_1765882a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 19979
+      },
+      "writtenOn": "2026-04-07T02:18:14Z",
+      "side": 1,
+      "message": "lg2m, as for the abi conflict I dont think we have any devices building this using bazel or legacy build.sh which would make use of those files",
+      "revId": "475066cfcc4833b8e37a20260ac941bac79fc379",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
