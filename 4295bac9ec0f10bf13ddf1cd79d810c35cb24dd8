@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3678f122_ddd79765",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 19979
+      },
+      "writtenOn": "2026-05-07T03:53:59Z",
+      "side": 1,
+      "message": "Removing +1 for now, lost data/wifi in a build. Need to debug",
+      "revId": "4295bac9ec0f10bf13ddf1cd79d810c35cb24dd8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
