@@ -2060,8 +2060,9 @@ static int qcom_slim_ngd_ctrl_probe(struct platform_device *pdev)
 		dev_err(&pdev->dev, "no Remote mem\n");
 	}
 
-	ret = devm_request_irq(dev, ctrl->irq, qcom_slim_ngd_interrupt,
-			       IRQF_TRIGGER_HIGH, "slim-ngd", ctrl);
+	ret = devm_request_irq(dev, res->start, qcom_slim_ngd_interrupt,
+			       IRQF_TRIGGER_HIGH | IRQF_NO_AUTOEN,
+			       "slim-ngd", ctrl);
 	if (ret) {
 		dev_err(&pdev->dev, "request IRQ failed\n");
 		return ret;
@@ -2161,6 +2162,9 @@ static int qcom_slim_ngd_ctrl_probe(struct platform_device *pdev)
 	}
 
 	platform_driver_register(&qcom_slim_ngd_driver);
+
+	enable_irq(res->start);
+
 	SLIM_INFO(ctrl, "NGD SB controller is up!\n");
 	return 0;
 
