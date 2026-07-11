@@ -16,6 +16,23 @@
       "message": "Something in this merge broke display wake on avatrn, will investigate",
       "revId": "a0df244db830364cd64a41ab79d4cff0bf790936",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1d1d12b6_deba1524",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 32837
+      },
+      "writtenOn": "2026-07-11T12:41:57Z",
+      "side": 1,
+      "message": "problem is here somewhere:\n\nd43afc412d43  misc: fastrpc: fix DMA address corruption due to find_vma misuse\na3d91218ccca  misc: fastrpc: Fix NULL pointer dereference in rpmsg callback\n5ee32f221713  misc: fastrpc: Add dma_mask to fastrpc_channel_ctx\nc6e5c2be09f8  misc: fastrpc: fix use-after-free of fastrpc_user in workqueue context",
+      "revId": "a0df244db830364cd64a41ab79d4cff0bf790936",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
