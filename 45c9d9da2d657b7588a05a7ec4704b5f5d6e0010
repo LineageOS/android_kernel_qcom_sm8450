@@ -33,6 +33,23 @@
       "message": "Working an intended on Avatrn",
       "revId": "45c9d9da2d657b7588a05a7ec4704b5f5d6e0010",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a9076499_4cbdcec1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2026-08-06T13:45:37Z",
+      "side": 1,
+      "message": "Did you verify that this is needed for all sm8450 shipping devices?",
+      "revId": "45c9d9da2d657b7588a05a7ec4704b5f5d6e0010",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
