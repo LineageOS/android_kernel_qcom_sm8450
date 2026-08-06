@@ -50,6 +50,24 @@
       "message": "Did you verify that this is needed for all sm8450 shipping devices?",
       "revId": "45c9d9da2d657b7588a05a7ec4704b5f5d6e0010",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ad8d5f65_c0f78a95",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 19979
+      },
+      "writtenOn": "2026-08-06T13:54:06Z",
+      "side": 1,
+      "message": "No, but I figured my devices cannot be the only ones with the issue. I can try running a build on ingot with and without this patch",
+      "parentUuid": "a9076499_4cbdcec1",
+      "revId": "45c9d9da2d657b7588a05a7ec4704b5f5d6e0010",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
