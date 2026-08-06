@@ -85,6 +85,23 @@
       "message": "I had the issue on Avatrn, and then I had comments left by another user with a list of 4 changes that were narrowed down to cause the issue. I don\u0027t know what device they were using to determine the list. See https://review.lineageos.org/c/LineageOS/android_kernel_qcom_sm8450/+/493544",
       "revId": "45c9d9da2d657b7588a05a7ec4704b5f5d6e0010",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "236896b3_41f7eeae",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 19979
+      },
+      "writtenOn": "2026-08-06T15:59:09Z",
+      "side": 1,
+      "message": "Ingot is fine w/o this revert. But all my moto devices need this. Unsure if any others are affected. So I\u0027ll leave this here for the time being, maybe others will chime in whether this is best kept in common or moved to vendor kernels",
+      "revId": "45c9d9da2d657b7588a05a7ec4704b5f5d6e0010",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
