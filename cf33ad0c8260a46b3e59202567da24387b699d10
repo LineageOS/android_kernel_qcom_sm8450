@@ -16,6 +16,23 @@
       "message": "pick the commits done in lineage-23.2-6.6 by luk instead",
       "revId": "cf33ad0c8260a46b3e59202567da24387b699d10",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "137aa209_f37c4b04",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 19979
+      },
+      "writtenOn": "2026-08-08T02:11:50Z",
+      "side": 1,
+      "message": "https://review.lineageos.org/c/LineageOS/android_kernel_qcom_sm8750/+/495647",
+      "revId": "cf33ad0c8260a46b3e59202567da24387b699d10",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
