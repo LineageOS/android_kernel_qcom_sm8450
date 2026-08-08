@@ -33,6 +33,24 @@
       "message": "https://review.lineageos.org/c/LineageOS/android_kernel_qcom_sm8750/+/495647",
       "revId": "cf33ad0c8260a46b3e59202567da24387b699d10",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2ba1d248_9708752f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 32837
+      },
+      "writtenOn": "2026-08-08T02:19:16Z",
+      "side": 1,
+      "message": "thanks!",
+      "parentUuid": "137aa209_f37c4b04",
+      "revId": "cf33ad0c8260a46b3e59202567da24387b699d10",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
