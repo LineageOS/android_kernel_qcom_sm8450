@@ -16,6 +16,24 @@
       "message": "Fixed Chrome on pdx223/224",
       "revId": "815e317bce6a2e4229ca99aeb905fa9a9e622964",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bb2d582e_469b11a8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 32674
+      },
+      "writtenOn": "2026-08-14T10:59:48Z",
+      "side": 1,
+      "message": "(on 24.0)",
+      "parentUuid": "6e8d4312_1e90d130",
+      "revId": "815e317bce6a2e4229ca99aeb905fa9a9e622964",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
