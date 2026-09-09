@@ -51,6 +51,24 @@
       "parentUuid": "8430241c_b62961c2",
       "revId": "f94b8ce0dafc10cf0491d30fab850625c54151f1",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b76bdf32_b648b535",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 19979
+      },
+      "writtenOn": "2026-09-09T14:21:12Z",
+      "side": 1,
+      "message": "Push the fix to gerrit",
+      "parentUuid": "d0f7e0dd_f5a978a0",
+      "revId": "f94b8ce0dafc10cf0491d30fab850625c54151f1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
