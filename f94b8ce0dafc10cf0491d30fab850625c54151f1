@@ -33,6 +33,24 @@
       "message": "Did you compile test this before a CR @johnsonnolen@gmail.com? I\u0027m seeing the same issues @dkpost3@gmail.com is experiencing",
       "revId": "f94b8ce0dafc10cf0491d30fab850625c54151f1",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d0f7e0dd_f5a978a0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 32837
+      },
+      "writtenOn": "2026-09-09T13:50:37Z",
+      "side": 1,
+      "message": "I fixed it this way\n\n* changed `RMNET_FLAGS_INGRESS_MAP_CKSUMV5 in include/uapi/linux/if_link.h from BIT(4) to BIT(5);`\n\n* removed the duplicate `RMNET_FLAGS_INGRESS_MAP_CKSUMV5 definition from qcom/opensource/datarmnet/core/rmnet_private.h`\n\nThis keeps the Qualcomm downstream RMNET flag layout consistent: BIT(4) for ingress coalescing, BIT(5) for ingress MAPv5 checksum, and BIT(6) for egress MAPv5 checksum.",
+      "parentUuid": "8430241c_b62961c2",
+      "revId": "f94b8ce0dafc10cf0491d30fab850625c54151f1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
