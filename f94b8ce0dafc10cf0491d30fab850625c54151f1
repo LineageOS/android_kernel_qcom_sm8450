@@ -16,6 +16,23 @@
       "message": "build failed due to a conflict between the generic kernel RMNET UAPI and Qcom downstream datarmnet implementation.\n\nThe kernel defined RMNET_FLAGS_INGRESS_MAP_CKSUMV5 as BIT(4), while qcom datarmnet already used BIT(4) for RMNET_FLAGS_INGRESS_COALESCE and expected MAPv5 checksum flags at BIT(5) and BIT(6). This caused a macro redefinition error and, more importantly, an ABI mismatch between the two RMNET implementations.\n\nissue was resolved by aligning the kernel RMNET flag layout with qcom downstream ABI:\n\n`INGRESS_COALESCE  BIT(4)`\n`INGRESS_MAP_CKSUMV5 BIT(5)`\n`EGRESS_MAP_CKSUMV5 BIT(6)`\n\nduplicate RMNET_FLAGS_INGRESS_MAP_CKSUMV5 definition was then removed from datarmnet, leaving a single consistent definition.\n\n\nxiaomi sm8450",
       "revId": "f94b8ce0dafc10cf0491d30fab850625c54151f1",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8430241c_b62961c2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 19979
+      },
+      "writtenOn": "2026-09-09T11:47:49Z",
+      "side": 1,
+      "message": "Did you compile test this before a CR @johnsonnolen@gmail.com? I\u0027m seeing the same issues @dkpost3@gmail.com is experiencing",
+      "revId": "f94b8ce0dafc10cf0491d30fab850625c54151f1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
