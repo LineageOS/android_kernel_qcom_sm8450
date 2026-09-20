@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6addc966_736b7c00",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 32837
+      },
+      "writtenOn": "2026-09-20T22:52:03Z",
+      "side": 1,
+      "message": "work. xiaomi sm8450\n```sh\n[user@archlinux pixelos]$ adb shell \u0027\nDIR\u003d/sdcard/Download/FUSE_BPF_TEST\nCOUNT\u003d1000\n\nrm -rf \"$DIR\"\nmkdir -p \"$DIR\"\n\necho \"\u003d\u003d\u003d\u003d\u003d FUSE-BPF \u003d\u003d\u003d\u003d\u003d\"\necho \"running: $(getprop ro.fuse.bpf.is_running)\"\necho\n\necho \"\u003d\u003d\u003d\u003d\u003d CREATE $COUNT \u003d\u003d\u003d\u003d\u003d\"\ntime sh -c \"\ni\u003d0\nwhile [ \\$i -lt $COUNT ]; do\n    echo test \u003e \\\"$DIR/file_\\$i.txt\\\"\n    i\u003d\\$((i + 1))\ndone\n\"\necho \"files: $(find \"$DIR\" -type f | wc -l)\"\necho\n\necho \"\u003d\u003d\u003d\u003d\u003d READ $COUNT \u003d\u003d\u003d\u003d\u003d\"\ntime sh -c \"\nfor f in \\\"$DIR\\\"/*; do\n    cat \\\"\\$f\\\" \u003e/dev/null\ndone\n\"\necho\n\necho \"\u003d\u003d\u003d\u003d\u003d RENAME $COUNT \u003d\u003d\u003d\u003d\u003d\"\ntime sh -c \"\ni\u003d0\nwhile [ \\$i -lt $COUNT ]; do\n    mv \\\"$DIR/file_\\$i.txt\\\" \\\"$DIR/new_\\$i.txt\\\"\n    i\u003d\\$((i + 1))\ndone\n\"\necho \"files: $(find \"$DIR\" -type f | wc -l)\"\necho\n\necho \"\u003d\u003d\u003d\u003d\u003d DELETE $COUNT \u003d\u003d\u003d\u003d\u003d\"\ntime rm -rf \"$DIR\"\n\necho\necho \"\u003d\u003d\u003d\u003d\u003d RESULT \u003d\u003d\u003d\u003d\u003d\"\nif [ ! -e \"$DIR\" ]; then\n    echo \"PASS\"\nelse\n    echo \"FAIL\"\nfi\n\u0027\n\u003d\u003d\u003d\u003d\u003d FUSE-BPF \u003d\u003d\u003d\u003d\u003d\nrunning: true\n\n\u003d\u003d\u003d\u003d\u003d CREATE 1000 \u003d\u003d\u003d\u003d\u003d\n    0m01.60s real     0m00.07s user     0m00.43s system\nfiles: 1000\n\n\u003d\u003d\u003d\u003d\u003d READ 1000 \u003d\u003d\u003d\u003d\u003d\n    0m23.55s real     0m08.61s user     0m13.60s system\n\n\u003d\u003d\u003d\u003d\u003d RENAME 1000 \u003d\u003d\u003d\u003d\u003d\n    0m24.31s real     0m08.82s user     0m13.64s system\nfiles: 1000\n\n\u003d\u003d\u003d\u003d\u003d DELETE 1000 \u003d\u003d\u003d\u003d\u003d\n\n\u003d\u003d\u003d\u003d\u003d RESULT \u003d\u003d\u003d\u003d\u003d\n    0m01.09s real     0m00.02s user     0m00.24s system\nPASS```",
+      "revId": "69f8dd747d23aaae2a1133f7a3c4b6e7853c6273",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
