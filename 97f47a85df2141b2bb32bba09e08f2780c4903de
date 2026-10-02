@@ -16,6 +16,23 @@
       "message": "stage ASB on top",
       "revId": "97f47a85df2141b2bb32bba09e08f2780c4903de",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c86ca112_cecaed9c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 32837
+      },
+      "writtenOn": "2026-10-02T07:18:15Z",
+      "side": 1,
+      "message": "Kernel has been successfully merged and Built.So far, there are no problems.\n\nxiaomi_xm8450",
+      "revId": "97f47a85df2141b2bb32bba09e08f2780c4903de",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
