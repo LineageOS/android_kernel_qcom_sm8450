@@ -1822,7 +1822,7 @@ static int qrtr_send_resume_tx(struct qrtr_cb *cb)
 	if (!node)
 		return -EINVAL;
 
-	skb = qrtr_alloc_ctrl_packet(&pkt);
+	skb = qrtr_alloc_ctrl_packet(&pkt, GFP_KERNEL);
 	if (!skb) {
 		qrtr_log_resume_tx(cb->src_node, cb->src_port,
 				   RTX_CTRL_SKB_ALLOC_FAIL);
