@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "70a1537f_c152e8c4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 19979
+      },
+      "writtenOn": "2026-11-02T22:51:09Z",
+      "side": 1,
+      "message": "/opt/lineage/kernel/motorola/sm7435/net/qrtr/af_qrtr.c:1839:37: error: too many arguments to function call, expected single argument \u0027pkt\u0027, have 2 arguments\n 1839 |         skb \u003d qrtr_alloc_ctrl_packet(\u0026pkt, GFP_KERNEL);\n      |               ~~~~~~~~~~~~~~~~~~~~~~       ^~~~~~~~~~\n/opt/lineage/kernel/motorola/sm7435/include/linux/gfp.h:325:20: note: expanded from macro \u0027GFP_KERNEL\u0027\n  325 | #define GFP_KERNEL      (__GFP_RECLAIM | __GFP_IO | __GFP_FS)\n      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n/opt/lineage/kernel/motorola/sm7435/net/qrtr/af_qrtr.c:1037:24: note: \u0027qrtr_alloc_ctrl_packet\u0027 declared here\n 1037 | static struct sk_buff *qrtr_alloc_ctrl_packet(struct qrtr_ctrl_pkt **pkt)",
+      "revId": "ec694029fcc66ba0a6447dbbe5005f985b853dc0",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
